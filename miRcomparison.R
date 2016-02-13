@@ -59,6 +59,29 @@ PetGuoSuXImm<-intersect(PetXGuoXSu, lists$Immunol.cell.biol.2015.GSE57442..10.RP
 
 GuoGseSuXImm<-intersect(GuoXGseXSu, lists$Immunol.cell.biol.2015.GSE57442..10.RPM)
 
+#All 5
+
+all5<-intersect(PetGuoGseXSu, lists$Immunol.cell.biol.2015.GSE57442..10.RPM)
+
+#combine all 4 list
+common4<-c(PetGuoGseXImm, PetGuoGseXSu, PetGseSuXImm, PetGuoSuXImm, GuoGseSuXImm)
+all4<-unique(common4)
+
+#combine all 3 way list
+common3<-c(PetXGuoXGSE, PetXGuoXSu, PetXGuoXImm, PetXGseXSu, PetXGseXImm, PetXSuXImm, GuoXGseXSu, GuoXGseXImm, GuoXSuXImm,
+           GSEXSuXImm)
+all3<-unique(common3)
+
+#combine all 2 way lists
+common2<-c(PetrivXGuo, PetrivXGSE, PetXSu, petXImm, GuoXGSE, GuoXSU, GuoXImm, GSEXSU, GSEXImm, SuXImm)
+all2<-unique(common2)
+
+#save files
+
+write.csv(all5, "5way.csv")
+write.csv(all4, "4way.csv")
+write.csv(all3, "3way.csv")
+write.csv(all2, "2way.csv")
 
 
 
